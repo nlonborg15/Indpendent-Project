@@ -2,10 +2,13 @@ public class Archer extends Unit
 {
   public Archer (String giveName, boolean plyrU)
   {
-    health = (int)(Math.random()*100);
     name = giveName;
     job = "Archer";
-    strength = (int)(Math.random() * 10);
+    stats[0] = (int)(Math.random() * 15 + 10);//HP
+    stats[1] = (int)(Math.random() * 5 + 10);//Strength
+    stats[2] = (int)(Math.random() * 7 + 7);//Speed
+    stats[3] = (int)(Math.random() * 7 + 7);//Skill
+    stats[4] = (int)(Math.random() * 5 + 5);//Defense
     move = 4;
     exp = 0;
     level = 1;

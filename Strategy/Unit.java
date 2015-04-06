@@ -2,6 +2,7 @@ public class Unit
 {
   String name;
   String job;
+  int[] stats = new int[5];
   int health;
   int strength;
   int speed;
@@ -38,6 +39,13 @@ public class Unit
   {
     level++;
     exp = exp-100;
+    for (int i = 0; i < growthRates.length; i++)
+    {
+      if (Math.random() * 100 <= growthRates[i])
+      {
+        stats[i]++;
+      }
+    }
   }
   public int getMove()
   {

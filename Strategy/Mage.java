@@ -2,10 +2,13 @@ public class Mage extends Unit
 {
   public Mage(String giveName, boolean plyrU)
   {
-    health = (int)(Math.random()*100);
     name = giveName;
     job = "Mage";
-    strength = (int)(Math.random() * 10);
+    stats[0] = (int)(Math.random() * 7 + 10);//HP
+    stats[1] = (int)(Math.random() * 10 + 10);//Strength
+    stats[2] = (int)(Math.random() * 7 + 10);//Speed
+    stats[3] = (int)(Math.random() * 7 + 10);//Skill
+    stats[4] = (int)(Math.random() * 3 + 3);//Defense
     move = 4;
     exp = 0;
     level = 1;

@@ -2,10 +2,13 @@ public class Warrior extends Unit
 {
   public Warrior(String giveName, boolean plyrU)
   {
-    health = (int)(Math.random()*100);
     name = giveName;
     job = "Warrior";
-    strength = (int)(Math.random() * 10);
+    stats[0] = (int)(Math.random() * 20 + 10);//HP
+    stats[1] = (int)(Math.random() * 10 + 10);//Strength
+    stats[2] = (int)(Math.random() * 5 + 5);//Speed
+    stats[3] = (int)(Math.random() * 7 + 5);//Skill
+    stats[4] = (int)(Math.random() * 10 + 5);//Defense
     move = 5;
     exp = 0;
     level = 1;
