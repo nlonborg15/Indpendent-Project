@@ -18,4 +18,26 @@ public class TerrainBoard
     Unit[][] board = new Unit[(int)(Math.random()*(rowMax-rowMin) + rowMin)][(int)(Math.random()*(colMax-colMin) + colMin)];
     return board;
   }
+  public void printDisplay(Unit[][] display)
+  {
+    int kInt = 1;
+    for (Unit[] k : display)
+    {
+      int sInt = 1;
+      for (Unit s: k)
+      {
+        if (s != null)
+        {
+          System.out.print("[" + s.getName() + "]");
+          sInt++;
+        }
+        else
+        {
+          System.out.print("[" +kInt + "," + sInt + "]");
+          sInt++;
+        }
+      }
+      kInt++;
+    }
   }
+}
