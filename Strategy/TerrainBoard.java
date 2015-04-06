@@ -23,7 +23,6 @@ public class TerrainBoard
     int kInt = 1;
     for (Unit[] k : display)
     {
-      int temp = 1;
       int sInt = 1;
       for (Unit s: k)
       {
@@ -38,7 +37,6 @@ public class TerrainBoard
           sInt++;
         }
       }
-      temp = kInt;
       kInt++;
     }
   }
