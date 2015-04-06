@@ -1,0 +1,11 @@
+public class TestDriver
+{
+  public static void main (String[] args)
+  {
+    Warrior w1 = new Warrior("john");
+    System.out.println(w1.getMove());
+    Warrior w2 = new Warrior("tom", 17, 11, 1);
+    System.out.println(w2.getMove());
+    System.out.println(w1.getMove());
+  }
+}

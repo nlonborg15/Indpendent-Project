@@ -1,0 +1,26 @@
+import java.util.*;
+
+public class TerrainBoard
+{
+  public TerrainBoard()
+  {
+  }
+  
+  public int[][] createCustom (int rw, int col)
+  {
+    int [][] board = new int [rw][col];
+    return board;
+  }
+  
+  public int[][] createRandom()
+  {
+    int[][] board = new int[(int)(Math.random()*40 + 10)][(int)(Math.random()*40 + 10)];
+    return board;
+  }
+  
+  public int[][] createWParameters(int rowMax, int rowMin, int colMax, int colMin)
+  {
+    int[][] board = new int[(int)(Math.random()*(rowMax-rowMin) + rowMin)][(int)(Math.random()*(colMax-colMin) + colMin)];
+    return board;
+  }
+}
