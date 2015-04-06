@@ -12,7 +12,6 @@ public class Warrior extends Unit
     move = 5;
     exp = 0;
     level = 1;
-    speed = (int)(Math.random() * 10);
     playerUnit = plyrU;
     growthRates[0] = (int)(Math.random() * 35 + 60);//HP growth
     growthRates[1] = (int)(Math.random() * 55 + 40);//Strength growth
@@ -20,15 +19,14 @@ public class Warrior extends Unit
     growthRates[3] = (int)(Math.random() * 60 + 20);//Skill growth
     growthRates[4] = (int)(Math.random() * 55 + 40);//Defense growth
   }
-  public Warrior(String giveName, int mvmnt, int str, int lvl, int spd, int[] growths, boolean plyrU) //creates special warrior
+  public Warrior(String giveName, int mvmnt, int[] stat, int lvl, int[] growths, boolean plyrU) //creates special warrior
   {
     name = giveName;
     job = "Warrior";
-    strength = str;
+    stats = stat;
     move = mvmnt;
     exp = 0;
     level = lvl;
-    speed = spd;
     playerUnit = plyrU;
     growthRates = growths;
   }

@@ -3,10 +3,6 @@ public class Unit
   String name;
   String job;
   int[] stats = new int[5];
-  int health;
-  int strength;
-  int speed;
-  int skill;
   //int will;--stretch goal stat
   //int stamina;--stretch goal stat
   int exp;
@@ -23,13 +19,25 @@ public class Unit
   {
     return job;
   }
+  public int getHP()
+  {
+    return stats[0];
+  }
+  public int getAttack()
+  {
+    return stats[1];
+  }
   public int getSpeed()
   {
-    return speed;
+    return stats[2];
   }
-  public int getAttack(int weaponS)
+  public int getSkill()
   {
-    return strength + weaponS;
+    return stats[3];
+  }
+  public int getDef()
+  {
+    return stats[4];
   }
   public boolean getPlayers() //keeps track of whether or not it's the player's unit
   {
