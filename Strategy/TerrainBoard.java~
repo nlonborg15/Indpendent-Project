@@ -2,25 +2,42 @@ import java.util.*;
 
 public class TerrainBoard
 {
-  public TerrainBoard()
+  public Unit[][] createRandom()
   {
+    Unit[][] board = new Unit[(int)(Math.random()*40 + 10)][(int)(Math.random()*40 + 10)];
+    return board;
   }
-  
-  public int[][] createCustom (int rw, int col)
+  public Unit[][] createCustom (int rw, int col)
   {
-    int [][] board = new int [rw][col];
+    Unit[][] board = new Unit[rw][col];
     return board;
   }
   
-  public int[][] createRandom()
+  public Unit[][] createWParameters(int rowMax, int rowMin, int colMax, int colMin)
   {
-    int[][] board = new int[(int)(Math.random()*40 + 10)][(int)(Math.random()*40 + 10)];
+    Unit[][] board = new Unit[(int)(Math.random()*(rowMax-rowMin) + rowMin)][(int)(Math.random()*(colMax-colMin) + colMin)];
     return board;
   }
-  
-  public int[][] createWParameters(int rowMax, int rowMin, int colMax, int colMin)
+  public void printDisplay(Unit[][] display)
   {
-    int[][] board = new int[(int)(Math.random()*(rowMax-rowMin) + rowMin)][(int)(Math.random()*(colMax-colMin) + colMin)];
-    return board;
+    int kInt = 1;
+    for (Unit[] k : display)
+    {
+      int sInt = 1;
+      for (Unit s: k)
+      {
+        if (s != null)
+        {
+          System.out.print("[" + s.getName() + "]");
+          sInt++;
+        }
+        else
+        {
+          System.out.print("[" +kInt + "," + sInt + "]");
+          sInt++;
+        }
+      }
+      kInt++;
+    }
   }
 }

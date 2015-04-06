@@ -30,7 +30,7 @@ public class Unit
   {
     return strength + weaponS;
   }
-  public boolean players() //keeps track of whether or not it's the player's unit
+  public boolean getPlayers() //keeps track of whether or not it's the player's unit
   {
     return playerUnit;
   }

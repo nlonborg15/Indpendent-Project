@@ -2,5 +2,5 @@ import java.util.*;
 
 public class Player
 {
-  ArrayList<Unit> players = new ArrayList<Unit>();
+  ArrayList<Unit> playersUnits = new ArrayList<Unit>();
 }
