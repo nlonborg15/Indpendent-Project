@@ -28,7 +28,8 @@ public class StrategyDriver
       System.out.print("Archers: ");
       numA1 = in.nextInt();
     }
-    System.out.println("Player 1, of the " + numUnits + "units, how many would you like to be of each class?");
+    plyr1.createUnits(numW1, numM1, numA1, numUnits);
+    System.out.println("Player 2, of the " + numUnits + "units, how many would you like to be of each class?");
     System.out.print("Warriors: ");
     int numW2 = in.nextInt();
     System.out.print("Mages: ");
@@ -45,28 +46,6 @@ public class StrategyDriver
       System.out.print("Archers: ");
       numA2 = in.nextInt();
     }
-  }
-  public void createUnits(int wrrs, int mags, int achrs, int total)
-  {
-    Unit[] units = new Unit[total];
-    Scanner in = new Scanner(System.in);
-    for (int w = 0; w < wrrs; w++)
-    {
-      System.out.print("Unit name?");
-      String name = in.next();
-      units[w] = new Warrior(name, true);
-    }
-    for (int m = 0; m < mags; m++)
-    {
-      System.out.print("Unit name?");
-      String name = in.next();
-      units[m + wrrs] = new Mage(name, true);
-    }
-    for (int a = 0; a < achrs; a++)
-    {
-      System.out.print("Unit name?");
-      String name = in.next();
-      units[a + mags + wrrs] = new Archer(name, true);
-    }
+    plyr2.createUnits(numW2, numM2, numA2, numUnits);
   }
 } 
