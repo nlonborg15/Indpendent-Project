@@ -4,6 +4,11 @@ public class Player
 {
   ArrayList<Unit> playersUnits = new ArrayList<Unit>();
   
+  public ArrayList<Unit> getUnits()
+  {
+    return playersUnits;
+  }
+  
   public void createUnits(int wrrs, int mags, int achrs, int total)
   {
     Unit[] units = new Unit[total];

@@ -19,6 +19,10 @@ public class Unit
   {
     return job;
   }
+  public String getJobMod()
+  {
+    return job.substring(0,1);
+  }
   public int getHP()
   {
     return stats[0];

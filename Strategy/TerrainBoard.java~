@@ -28,16 +28,59 @@ public class TerrainBoard
       {
         if (s != null)
         {
-          System.out.print("[" + s.getName() + "]");
+          System.out.print("[" + s.getName() + "(" + s.getJobMod() + ")" + "]");
           sInt++;
         }
         else
         {
-          System.out.print("[" +kInt + "," + sInt + "]");
-          sInt++;
+          if (kInt < 10 && sInt < 10)
+          {
+            System.out.print("[0" +kInt + ",0" + sInt + "]");
+            sInt++;
+          }
+          else if (kInt < 10 && sInt >= 10)
+          {
+            System.out.print("[0" +kInt + "," + sInt + "]");
+            sInt++;
+          }
+          else if (kInt >= 10 && sInt < 10)
+          {
+            System.out.print("[" +kInt + ",0" + sInt + "]");
+            sInt++;
+          }
+          else
+          {
+            System.out.print("[" +kInt + "," + sInt + "]");
+            sInt++;
+          }
         }
       }
+      System.out.println();
       kInt++;
     }
+  }
+  public ArrayList<Unit> moveOrder(Player plyr1, Player plyr2)
+  {
+    int greatest = 0;
+    ArrayList<Unit> allUnits = new ArrayList<Unit>();
+    for (Unit k : plyr1.getUnits())
+    {
+      allUnits.add(k);
+    }
+    for (Unit k : plyr2.getUnits())
+    {
+      allUnits.add(k);
+    }
+    for (int i = allUnits.size(); i >= 0; i--)
+    {
+      int k = 0;
+      while (allUnits.get(i).getSpeed() < allUnits.get(k).getSpeed())
+      {
+        k++;
+      }
+      allUnits.add(0, allUnits.get(i));
+      allUnits.remove(i);
+    }
+    return allUnits;
   }
 }
