@@ -1,0 +1,13 @@
+public class Game
+{
+  public Game (Player plyr1, Player plyr2, ArrayList<Unit> moveOrder, Unit[][] board)
+  {
+  }
+  public void play()
+  {
+    while (plyr1.getUnits().size() > 0 || plyr1.getUnits().size() > 0)
+    {
+      for (int i = 0; i < moveOrder.size(); i++)
+    }
+  }
+}

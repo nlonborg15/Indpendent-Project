@@ -1,3 +1,5 @@
+import java.util.*;
+
 public class Unit
 {
   String name;
@@ -66,5 +68,41 @@ public class Unit
   public int[] getGrowths()
   {
     return growthRates;
+  }
+  public void move(Unit[][] board)
+  {
+    Scanner in = new Scanner(System.in);
+    System.out.println("Please enter the coordinates of the point you'd like to move this unit to.");
+    System.out.print("x-value (right number):");
+    int xVal = in.nextInt();
+    System.out.print("y-value (left number):");
+    int yVal = in.nextInt();
+    if (board[xVal-1][yVal-1] != null)
+    {
+      System.out.println("Sorry, that space is occupied. Please choose again");
+      move(board);
+    }
+    else
+    {
+      board[xVal][yVal] = this;
+    }
+  }
+  
+  public void death(Player p1, Player p2)
+  {
+    for (Unit k : p1.getUnits())
+    {
+      if (k == this)
+      {
+        p1.getUnits().remove(k);
+      }
+    }
+    for (Unit k : p2.getUnits())
+    {
+      if (k == this)
+      {
+        p2.getUnits().remove(k);
+      }
+    }
   }
 }

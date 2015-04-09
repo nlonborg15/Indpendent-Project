@@ -15,19 +15,19 @@ public class Player
     Scanner in = new Scanner(System.in);
     for (int w = 0; w < wrrs; w++)
     {
-      System.out.print("Unit name?");
+      System.out.print("Warrior(" + (w+1) + ") name?");
       String name = in.next();
       playersUnits.add(new Warrior(name, true));
     }
     for (int m = 0; m < mags; m++)
     {
-      System.out.print("Unit name?");
+      System.out.print("Mage(" + (m+1) + ") name?");
       String name = in.next();
       playersUnits.add(new Mage(name, true));
     }
     for (int a = 0; a < achrs; a++)
     {
-      System.out.print("Unit name?");
+      System.out.print("Archer(" + (a+1) + ") name?");
       String name = in.next();
       playersUnits.add(new Archer(name, true));
     }
