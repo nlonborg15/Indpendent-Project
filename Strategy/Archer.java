@@ -4,7 +4,7 @@ public class Archer extends Unit
   {
     name = giveName;
     job = "Archer";
-    stats[0] = (int)(Math.random() * 15 + 10);//HP
+    stats[0] = (int)(Math.random() * 10 + 20);//HP
     stats[1] = (int)(Math.random() * 5 + 10);//Strength
     stats[2] = (int)(Math.random() * 7 + 7);//Speed
     stats[3] = (int)(Math.random() * 7 + 7);//Skill
@@ -13,6 +13,7 @@ public class Archer extends Unit
     exp = 0;
     level = 1;
     playerUnit = plyrU;
+    atkRange = 6;
     growthRates[0] = (int)(Math.random() * 30 + 40);//HP growth
     growthRates[1] = (int)(Math.random() * 20 + 50);//Strength growth
     growthRates[2] = (int)(Math.random() * 30 + 50);//Speed growth

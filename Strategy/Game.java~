@@ -1,13 +1,24 @@
+import java.util.*;
+
 public class Game
 {
-  public Game (Player plyr1, Player plyr2, ArrayList<Unit> moveOrder, Unit[][] board)
+  public void play(Player p1, Player p2, ArrayList<Unit> moveOrder, Unit[][] board)
   {
-  }
-  public void play()
-  {
-    while (plyr1.getUnits().size() > 0 || plyr1.getUnits().size() > 0)
+    while (p1.getUnits().size() > 0 || p2.getUnits().size() > 0)
     {
-      for (int i = 0; i < moveOrder.size(); i++)
+      int i = 0;
+      while (i < moveOrder.size())
+      {
+        moveOrder.get(i).move(board);
+        for (Unit k : moveOrder)
+        {
+          if (k.getHP() <= 0)
+          {
+            k.death(p1, p2);
+          }
+        }
+        i++;
+      }
     }
   }
 }

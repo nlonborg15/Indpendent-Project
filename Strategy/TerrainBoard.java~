@@ -78,7 +78,7 @@ public class TerrainBoard
       {
         k++;
       }
-      allUnits.add(0, allUnits.get(i));
+      allUnits.add(k, allUnits.get(i));
       allUnits.remove(i);
     }
     return allUnits;

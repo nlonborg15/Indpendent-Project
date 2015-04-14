@@ -21,13 +21,17 @@ public class Unit
   {
     return job;
   }
-  public String getJobMod()
+  public String getJobMod()//returns first letter of job
   {
     return job.substring(0,1);
   }
   public int getHP()
   {
     return stats[0];
+  }
+  public void recieveDam(int dam)//resets HP based on condition
+  {
+    stats[0] -= dam;
   }
   public int getAttack()
   {
@@ -69,7 +73,7 @@ public class Unit
   {
     return growthRates;
   }
-  public void move(Unit[][] board)
+  public void move(Unit[][] board)//moves the unit to another spot within its movement range
   {
     Scanner in = new Scanner(System.in);
     System.out.println("Please enter the coordinates of the point you'd like to move this unit to.");
@@ -88,7 +92,7 @@ public class Unit
     }
   }
   
-  public void death(Player p1, Player p2)
+  public void death(Player p1, Player p2)//removes the unit from the ArrayList of the player who controls it
   {
     for (Unit k : p1.getUnits())
     {
@@ -103,6 +107,45 @@ public class Unit
       {
         p2.getUnits().remove(k);
       }
+    }
+  }
+  
+  public ArrayList<Unit> canAttack(Unit[][] board)//meant to produce a list of the units within this units attack range
+  {
+    int x = 0;
+    int y = 0;
+    for (int i = 0; i < board.length; i++)
+    {
+      for (int p = 0; i < board[0].length; p++)
+      {
+        if (board[i][p] == this)
+        {
+          x = i;
+          y = p;
+        }
+      }
+    }
+    
+    ArrayList<Unit> canAtk = new ArrayList<Unit>();
+    int k = y;
+    for (int i = x; (i + k) - (x+y) < atkRange; x++)
+    {
+      for (k = y; (i + k) - (x+y) < atkRange; y++)
+      {
+        if (board[i][k] != null)
+        {
+          canAtk.add(board[i][k]);
+        }
+      }
+    }
+    return canAtk;
+  }
+  
+  public void attack(Unit victim)//deals damage to unit based on strength and victim's defense
+  {
+    if (Math.random() * 100 <= stats[3] * 5)
+    {
+      victim.recieveDam(stats[4] - victim.getDef());
     }
   }
 }
