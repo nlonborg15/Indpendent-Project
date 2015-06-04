@@ -1,6 +1,6 @@
 public class Archer extends Unit
 {
-  public Archer (String giveName, boolean plyrU)
+  public Archer (String giveName, Player boss)
   {
     name = giveName;
     job = "Archer";
@@ -12,15 +12,15 @@ public class Archer extends Unit
     move = 4;
     exp = 0;
     level = 1;
-    playerUnit = plyrU;
-    atkRange = 6;
+    owner = boss;
+    atkRange = 4;
     growthRates[0] = (int)(Math.random() * 30 + 40);//HP growth
     growthRates[1] = (int)(Math.random() * 20 + 50);//Strength growth
     growthRates[2] = (int)(Math.random() * 30 + 50);//Speed growth
     growthRates[3] = (int)(Math.random() * 55 + 40);//Skill growth
     growthRates[4] = (int)(Math.random() * 30 + 20);//Defense growth
   }
-  public Archer (String giveName, int mvmnt, int[] stat, int lvl, int[] growths, boolean plyrU) //creates special mage
+  public Archer (String giveName, int mvmnt, int[] stat, int lvl, int[] growths, Player boss) //creates special mage
   {
     name = giveName;
     job = "Archer";
@@ -28,7 +28,7 @@ public class Archer extends Unit
     move = mvmnt;
     exp = 0;
     level = lvl;
-    playerUnit = plyrU;
+    owner = boss;
     growthRates = growths;
   }
 }

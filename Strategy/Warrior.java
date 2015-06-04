@@ -1,6 +1,6 @@
 public class Warrior extends Unit
 {
-  public Warrior(String giveName, boolean plyrU)
+  public Warrior(String giveName, Player boss)
   {
     name = giveName;
     job = "Warrior";
@@ -12,7 +12,7 @@ public class Warrior extends Unit
     move = 5;//how far the unit can move each round
     exp = 0;
     level = 1;
-    playerUnit = plyrU;//whether or not the unit is the player's unit
+    owner = boss;//whether or not the unit is the player's unit
     atkRange = 1;
     growthRates[0] = (int)(Math.random() * 35 + 60);//HP growth
     growthRates[1] = (int)(Math.random() * 55 + 40);//Strength growth
@@ -20,7 +20,7 @@ public class Warrior extends Unit
     growthRates[3] = (int)(Math.random() * 60 + 20);//Skill growth
     growthRates[4] = (int)(Math.random() * 55 + 40);//Defense growth
   }
-  public Warrior(String giveName, int mvmnt, int[] stat, int lvl, int[] growths, boolean plyrU) //creates special warrior
+  public Warrior(String giveName, int mvmnt, int[] stat, int lvl, int[] growths, Player boss) //creates special warrior
   {
     name = giveName;
     job = "Warrior";
@@ -28,7 +28,7 @@ public class Warrior extends Unit
     move = mvmnt;
     exp = 0;
     level = lvl;
-    playerUnit = plyrU;
+    owner = boss;
     growthRates = growths;
   }
   

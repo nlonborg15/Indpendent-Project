@@ -2,15 +2,15 @@ import java.util.*;
 
 public class Player
 {
-  ArrayList<Unit> playersUnits = new ArrayList<Unit>();
+  ArrayList<Unit> playersUnits = new ArrayList<Unit>();//stores all the units the player currently has at this point
   
-  public ArrayList<Unit> getUnits()
+  public ArrayList<Unit> getUnits()//gives all the units a given player has
   {
     return playersUnits;
   }
   
-  public void createUnits(int wrrs, int mags, int achrs, int total)
-  {
+  public void createUnits(int wrrs, int mags, int achrs, int total)//takes the number of warrios, mages, and archers the player wants add creates and adds
+  {//them to the playersUnits ArrayList
     Unit[] units = new Unit[total];
     Scanner in = new Scanner(System.in);
     for (int w = 0; w < wrrs; w++)

@@ -31,35 +31,37 @@ public class TerrainBoard
           System.out.print("[" + s.getName() + "(" + s.getJobMod() + ")" + "]");
           sInt++;
         }
-        else//this section is all about trying to get the board to come out as even and symmetrical as possibl
+        else//this section is all about trying to get the board to come out as even and symmetrical as possible
+        {
           if (kInt < 10 && sInt < 10)
-        {
-          System.out.print("[0" +kInt + ",0" + sInt + "]");
-          sInt++;
-        }
-        else if (kInt < 10 && sInt >= 10)
-        {
-          System.out.print("[0" +kInt + "," + sInt + "]");
-          sInt++;
-        }
-        else if (kInt >= 10 && sInt < 10)
-        {
-          System.out.print("[" +kInt + ",0" + sInt + "]");
-          sInt++;
-        }
-        else
-        {
-          System.out.print("[" +kInt + "," + sInt + "]");
-          sInt++;
+          {
+            System.out.print("[0" +kInt + ",0" + sInt + "]");
+            sInt++;
+          }
+          else if (kInt < 10 && sInt >= 10)
+          {
+            System.out.print("[0" +kInt + "," + sInt + "]");
+            sInt++;
+          }
+          else if (kInt >= 10 && sInt < 10)
+          {
+            System.out.print("[" +kInt + ",0" + sInt + "]");
+            sInt++;
+          }
+          else
+          {
+            System.out.print("[" +kInt + "," + sInt + "]");
+            sInt++;
+          }
         }
       }
+       System.out.println();
+        kInt++;
     }
-    System.out.println();
-    kInt++;
   }
+  
   public ArrayList<Unit> moveOrder(Player plyr1, Player plyr2)//creates the order in which all units will move based on the units' speed
   {
-    int greatest = 0;
     ArrayList<Unit> allUnits = new ArrayList<Unit>();
     for (Unit k : plyr1.getUnits())
     {
@@ -69,7 +71,7 @@ public class TerrainBoard
     {
       allUnits.add(k);
     }
-    for (int i = allUnits.size(); i >= 0; i--)
+    for (int i = allUnits.size()-1; i >= 0; i--)
     {
       int k = 0;
       while (allUnits.get(i).getSpeed() < allUnits.get(k).getSpeed())
@@ -77,7 +79,7 @@ public class TerrainBoard
         k++;
       }
       allUnits.add(k, allUnits.get(i));
-      allUnits.remove(i);
+      allUnits.remove(i + 1);
     }
     return allUnits;
   }
